@@ -1,0 +1,106 @@
+/* Global Styles */
+body {
+  background: linear-gradient(135deg, #e0f7fa, #80deea); /* Gradient background */
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  color: #ff5722; /* Deep orange */
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Text shadow for depth */
+}
+
+/* Input Styles */
+input[type="text"] {
+  padding: 12px;
+  border: 2px solid #ff5722; /* Deep orange */
+  border-radius: 25px; /* Rounded input */
+  width: 300px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: #ff8a65; /* Lighter orange */
+  box-shadow: 0 0 5px rgba(255, 138, 101, 0.5); /* Glow effect */
+  outline: none;
+}
+
+/* Pokemon List Styles */
+.pokemon-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between cards */
+  padding: 0 20px; /* Padding for the grid */
+}
+
+/* Pokemon Card Styles */
+.pokemon-card {
+  background-color: #ffffff; /* White background for cards */
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Deeper shadow */
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative; /* For pseudo-element */
+  overflow: hidden; /* To hide overflow */
+}
+
+.pokemon-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Image Styles */
+.pokemon-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* Circular image */
+  border: 2px solid #ff5722; /* Deep orange border */
+  margin-bottom: 10px;
+  transition: transform 0.3s; /* Smooth scaling */
+}
+
+.pokemon-card img:hover {
+  transform: scale(1.1); /* Scale effect on hover */
+}
+
+/* Card Title Styles */
+.pokemon-card h3 {
+  color: #333; /* Dark gray for text */
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+/* Pseudo-element for card decoration */
+.pokemon-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 87, 34, 0.1); /* Light overlay */
+  border-radius: 15px;
+  z-index: 0; /* Behind the content */
+  transition: opacity 0.3s;
+  opacity: 0; /* Initially hidden */
+}
+
+.pokemon-card:hover::before {
+  opacity: 1; /* Show overlay on hover */
+}
+
+.pokemon-card:hover h3 {
+  color: #ff5722; /* Change title color on hover */
+}
